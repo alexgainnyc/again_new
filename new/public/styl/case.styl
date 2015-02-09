@@ -1,0 +1,212 @@
+section.case
+	clearfix()
+
+	h3
+		display block
+		text-align center
+		font-size 13px
+		font-family font-bold
+		letter-spacing 0.12em
+		margin 20px 10% 20px 10%
+		text-transform uppercase
+
+	p
+		margin 18px 10% 15px 10%
+		font-family font-title
+		font-size 16px
+		line-height 125%
+
+	.title
+		clearfix()
+		height 406px
+		margin-bottom 45px
+
+		// transform rotate3d(1,0,0,0deg)
+		// perspective 1100px
+
+		.cover
+			background color-silver center center no-repeat
+			background-size cover
+			width 52%
+			height 406px
+			float left
+			transition all .5s cubic-bezier(0.190, 1.000, 0.220, 1.000) //ease-out-expo
+			phone width 100%
+
+			&:hover
+				// transform rotate3d(1,0,0,7deg)
+				opacity 0.5
+
+		.text
+			width 48%
+			height 406px
+			float left
+			display table
+			phone width 100%
+			phone height auto
+
+			.wrap
+				padding 6%
+				text-align center
+				display table-cell
+				vertical-align middle
+				height 100%
+
+				h2
+					font-size 15px
+					phone font-size 14px
+
+				p
+					font-size 32px
+					margin-top 8px
+					font-family font-regular
+					phone font-size 26px
+
+	.paragraph
+		clearfix()
+		margin-bottom 35px
+		padding 0 5% 0 5%
+		box-sizing border-box
+		height 50%
+		overflow hidden
+		display table
+
+		.text
+			display table-cell
+			vertical-align middle
+			width 42%
+			phone display block
+			phone width 100%
+			phone float left
+
+			h3
+				margin 4px 0 0 0
+
+		.keywords
+			width 48%
+			padding-left 17%
+			display table-cell
+			vertical-align middle
+			height 100%
+			// padding-bottom 80px
+			phone display block
+			phone width 100%
+			phone float left
+			phone padding 0
+
+			ul
+				li
+					display block
+					text-align center
+					font-size 25px
+					margin-top 6px
+					phone font-size 20px
+	
+	.paragraph-full
+		.text
+			font-size 56px
+			phone font-size 28px
+
+	.photos
+		clearfix()
+		margin-bottom 60px
+		display table
+		// transform rotate3d(1,0,0,0deg)
+		// perspective 1100px
+
+		.photo
+			display table-cell
+			width 50%
+			padding 0 2% 0 2%
+			text-align center
+			vertical-align middle
+			// border 1px solid red
+
+			img
+				width 100%
+				height auto
+				transition all .5s cubic-bezier(0.190, 1.000, 0.220, 1.000) //ease-out-expo
+
+				&:hover
+					opacity 0.5
+					// transform rotate3d(1,0,0,7deg)
+
+			&:first-child
+				padding 0 4% 0 4%
+
+	.photo-caption
+		clearfix()
+		margin-bottom 25px
+		display table
+		// transform rotate3d(1,0,0,0deg)
+		// perspective 1100px
+
+		.photo
+			display table-cell
+			width 68%
+			padding 0 1% 0 10%
+			phone display block
+			phone width 100%
+			phone float left
+
+			img
+				width 100%
+				height auto
+				transition all .5s cubic-bezier(0.190, 1.000, 0.220, 1.000) //ease-out-expo
+
+				&:hover
+					opacity 0.5
+					// transform rotate3d(1,0,0,7deg)
+
+		.text
+			display table-cell
+			width 32%
+			padding 4% 5% 1% 2%
+			vertical-align top
+			phone display block
+			phone width 100%
+			phone float left
+
+			h3
+				text-align left
+				margin-top 25px
+
+			p
+				line-height 115%
+
+		&.right
+			.photo
+				padding 0 10% 0 5%
+				width 65%
+				phone width 100%
+				phone padding 0 5% 0 5%
+
+			.text
+				width 35%
+				text-align right
+				// border 1px solid red
+				padding-right 1%
+				padding-top 5%
+				padding-left 10%
+				phone text-align left
+				phone width 100%
+				phone padding 0 5% 0 5%
+
+			h3
+				text-align right
+				phone text-align left
+
+	.photo-full
+		.photo
+			width 100%
+			
+			img
+				min-width 100%
+				width 100%
+				// phone width 100%
+
+	.gallery
+		margin-bottom 45px
+		padding 0 10% 0 10%
+		box-sizing border-box
+		phone width 100%

@@ -1,0 +1,151 @@
+body
+	color color-gray
+	background white
+	font-family sans-serif
+	font-weight 400
+	font-size 1em
+	line-height 1
+	text-rendering optimizeLegibility
+	-webkit-font-smoothing antialiased
+	font-family font-regular
+
+a
+	color color-main
+	text-decoration underline
+
+::selection
+	background color-main /* Safari */
+	color white
+
+::-moz-selection
+	background color-main /* Firefox */
+	color white
+
+
+/**
+ * Scroll
+ */
+
+ ::-webkit-scrollbar
+	width 4px
+	height 4px
+
+
+::-webkit-scrollbar-track
+	border-radius 10px
+	background white
+
+
+::-webkit-scrollbar-thumb
+	border-radius 10px
+	background color-main
+
+h1, h2, h3, h4, h5, h6
+	font-family font-bold
+	letter-spacing 0.06em
+
+header
+	height 445px
+	clearfix()
+
+	.clock
+		// background url("../img/tmp/clock.jpg") center center no-repeat
+		size 90px 140px
+		position absolute
+		margin 40px 0 0 50px
+
+		canvas
+			color color-main
+			size 90px 90px
+
+		span
+			display block
+			text-align center
+			margin-top 14px
+			font-size 12px
+			font-family font-bold
+			color color-main
+
+	.menu
+		position absolute
+		size 36px 36px
+		margin 40px 50px 0 0
+		right 0px
+		z-index 10000
+
+		a
+			display block
+			size 36px 36px
+			padding-top 0px
+
+			span
+				display block
+				background color-main
+				height 4px
+				margin-bottom 8px
+				transition all .3s cubic-bezier(0.190, 1.000, 0.220, 1.000) //ease-out-expo
+
+			&:hover
+				span
+					margin-bottom 4px
+
+				span:first-child
+					margin-top 4px
+
+	.title
+		text-align center
+
+		p
+			font-family font-title-italic
+			font-size 15px
+			margin-top 50px
+
+			&.top
+				margin-top 65px
+				font-family font-regular
+
+		h1
+			font-family font-title
+			color color-main
+			font-size 90px
+			letter-spacing -0.03em
+			margin 50px 0 0 0
+
+footer
+	.links
+		padding 180px 0px 210px 0px
+		text-align center
+
+		a
+			font-size 30px
+			letter-spacing 0.03em
+			text-decoration underline
+			color color-main
+
+			&:hover
+				text-decoration none
+
+			&.arrow
+				height 40px
+				padding-left 160px
+				background url("../img/arrow-left.jpg") center left no-repeat
+				margin-right 14%
+
+			&.next
+				background-image url("../img/arrow-right.jpg")
+				background-position center right
+				padding-left 0px
+				padding-right 160px
+				margin 0
+
+	.logo
+		position absolute
+		right 60px
+		margin 0px
+		color color-main
+		font-family font-title
+		font-size 60px
+		display block
+
+	.spacer
+		height 300px

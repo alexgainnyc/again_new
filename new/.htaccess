@@ -1,0 +1,64 @@
+#Options -MultiViews
+IndexIgnore *
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+
+	#AcceptPathInfo On
+
+	#Manager index.html
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^manager/$ system/manager/index.html [L,QSA]
+
+	#Manager files
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_URI} !manager/api(.+)$
+	RewriteRule ^manager(.+)$ system/manager$1 [L,QSA]
+
+	#App assets
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^assets(.+)$ app/assets$1 [L,QSA]
+
+	#App public
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^(.*)\.(html|css|js|jpg|png|gif|ttf|eot|svg|woff|pdf|ico|xml|mp4|webm) public/$1.$2 [QSA]
+
+	#App public index.html
+	#RewriteRule ^$ public/index.html [QSA]
+
+	#Routes
+	#RewriteCond %{REQUEST_FILENAME} !-f
+	#RewriteRule ^(.+)$ index.php?$1 [L,QSA]
+
+	#RewriteCond %{THE_REQUEST} \s/+index\.php\?([^\s&]+) [NC]
+	#RewriteRule ^ %1? [R=301,L]
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+		#RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^([^/]+)/?$ index.php?$1 [L,QSA]
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^(.+)$ index.php?$1 [L,QSA]
+</IfModule>
+
+#IE htc files
+AddType text/x-component .htc
+
+#Fonts
+AddType application/x-font-woff woff
+AddType application/x-font-ttf ttf
+AddType application/vnd.ms-fontobject eot
+AddType image/svg+xml svg
+
+#Videos
+AddType video/mp4 mp4
+AddType video/webm webm
+
+php_value upload_max_filesize 150M
+php_value post_max_size 150M
+php_value max_file_uploads 5
+
+AuthType Basic
+AuthName "Preview"
+AuthUserFile /home/againnewyork/againnewyork.com/-new/.htpasswd
+require valid-user

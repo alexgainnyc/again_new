@@ -1,0 +1,23 @@
+<div sub-form>
+	<label>{{field.label}}</label>
+
+	<table class="pure-table pure-table-horizontal" width="100%">
+		<tbody>
+			<tr ng-repeat="(index, entry) in data.data[field.name].data">
+				<td>
+					<fieldset sub-form-fields class="pure-g">
+						<div class="pure-control-group" ng-class="fieldGridClass(field)" ng-hide="data.data[field.nameHidden]" ng-repeat="field in field.fields | fieldsByFlags" ng-include="partialFieldPath(field, 'edit')"></div>
+					</fieldset>
+				</td>
+				<td class="print-hide" style="width: 80px; text-align: center;">
+					<button ng-click="orderEntry(index, -1)" type="button" class="pure-button" ng-show="orderShow(index, -1)" style="margin-bottom: 5px;"><i class="icon-long-arrow-up"></i></button>
+					<button ng-click="orderEntry(index, 1)" type="button" class="pure-button" ng-show="orderShow(index, 1)" style="margin-bottom: 5px;"><i class="icon-long-arrow-down"></i></button>
+					<hr ng-show="field.order">
+					<button ng-click="deleteEntry(index)" type="button" class="pure-button pure-button-error"><i class="icon-remove"></i></button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<button ng-click="addEntry()" type="button" class="pure-button"><i class="icon-add"></i> Add</button>
+</div>

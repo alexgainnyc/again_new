@@ -1,0 +1,46 @@
+.bx-wrapper
+	.bx-viewport
+		border none
+		box-shadow none
+		background color-silver
+		left auto
+		right auto
+
+		.slider, .bx-loading
+			background color-silver
+
+			.slide
+				background color-silver
+
+	.bx-controls-direction
+		a
+			background rgba(0, 0, 0, 0.1) url('../img/gallery-left.png') center center no-repeat
+			width 40px
+			height 80px
+			transition all .5s cubic-bezier(0.190, 1.000, 0.220, 1.000) //ease-out-expo
+			z-index 100
+
+			&.bx-prev
+				left 0px
+
+			&.bx-next
+				right 0px
+				background-image url('../img/gallery-right.png')
+
+			&:hover
+				width 80px
+				background-position center center
+
+	.bx-pager.bx-default-pager
+		bottom -45px
+
+		a
+			background transparent
+			border 1px solid color-main
+			margin 0 10px
+
+			&:hover
+				background color-main
+
+			&.active
+				background color-main

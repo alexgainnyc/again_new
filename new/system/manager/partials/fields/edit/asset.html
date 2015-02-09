@@ -1,0 +1,50 @@
+<div asset>
+	<label>{{field.label}}</label>
+
+	<div ng-show="!field.multiple">
+		<input type="hidden" name="{{field.name}}" value="{{data.data[field.name]}}" />
+		<button type="button" class="pure-button" role="button" ng-click="selectAsset(field, data.data)" style="display: table;">
+			<span ng-show="!thumb(data.data[field.name])"><i class="icon-file"></i> Select</span>
+			<img style="display: table-cell; vertical-align: middle;" ng-src="{{thumb(data.data[field.name])}}" ng-show="thumb(data.data[field.name])" width="100" height="75" />
+			<span style="display: table-cell; vertical-align: middle;" ng-show="thumb(data.data[field.name])">{{assetName(data.data[field.name])}}</span>
+			<!-- assets.files[data.data[field.name]].name -->
+		</button>
+	</div>
+
+	<div ng-show="field.multiple">
+		<button type="button" class="pure-button" role="button" ng-click="selectAsset(field, data.data)" style="display: table;">
+			<span><i class="icon-file"></i> Add</span>
+		</button>
+
+		<div ng-show="data.data[field.name].length > 0">
+			<br>
+			<table class="pure-table pure-table-odd" style="width: 100%;">
+				<thead>
+					<tr>
+						<th width="80%">Asset</th>
+						<!-- <th class="print-hide" width="20%" ng-show="field.limit > 1">Order</th> -->
+						<th class="print-hide">Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="(index, asset) in data.data[field.name]">
+						<td>
+							<button type="button" class="pure-button" role="button" ng-click="selectAsset(field, data.data, index)" style="display: table;">
+								<span ng-show="!thumb(asset)"><i class="icon-asset"></i> Select</span>
+								<img style="display: table-cell; vertical-align: middle;" ng-src="{{thumb(asset)}}" ng-show="thumb(asset)" width="100" height="75" />
+								<span style="display: table-cell; vertical-align: middle;" ng-show="thumb(asset)">{{assetName(asset)}}</span>
+							</button>
+						</td>
+						<!-- <td class="print-hide" ng-show="field.limit > 1">
+								<button ng-click="sortUp(index, structure.user.access_token)" type="button" class="pure-button button-small" ng-class="{ invisible: index == 0 }"><i class="icon-long-arrow-up"></i></button>
+								<button ng-click="sortDown(index, structure.user.access_token)" type="button" class="pure-button button-small" ng-class="{ invisible: index >= (data.data[field.name].length - 1) }"><i class="icon-long-arrow-down"></i></button>
+						 -->	</td>
+						<td class="print-hide">
+							<button ng-click="deleteAsset(field, data.data, index)" type="button" class="pure-button pure-button-error"><i class="icon-remove"></i></button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

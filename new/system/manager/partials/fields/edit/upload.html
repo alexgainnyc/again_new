@@ -1,0 +1,67 @@
+<div upload class="clearfix">
+	<label>{{field.label}}</label>
+
+	<span ng-show="data.data[field.name].length < field.limit">
+		<!--<input
+			jd-upload
+
+			jd-state="uploads.uploading"
+
+			jd-url-method="jdUploadURL()"
+			jd-json="true"
+			jd-placeholder="<img class='ajax-loader' src='img/ajax-loader.gif' />"
+			jd-auto-submit="true"
+			jd-accept="field.accepts"
+
+			on-finished="jdFinished(content, didUpload)"
+			on-error="jdLog('error')"
+			on-success="jdSuccess(content)"
+
+			jd-url="test"
+			on-start="jdLog('start')"
+
+			type="file"
+			name="attachment[]"
+
+			ng-multiple="{{field.limit > 1}}"
+		/>-->
+		<input
+			type="file"
+			name="attachment[]"
+		>
+		<!-- ng-multiple="{{field.limit > 1}}" -->
+	</span>
+
+	<div class="form-error" ng-show="uploads.error">{{uploads.error}}</div>
+
+	<div ng-show="data.data[field.name].length > 0 && field.limit == 1">
+		<div style="float: left; margin-top: 7px;"><a href="{{data.data[field.name][0].path}}" target="_blank">{{data.data[field.name][0].name}}</a></div>
+		<button style="float: left; margin-left: 8px;" ng-click="deleteFile(0, structure.user.access_token)" type="button" class="pure-button pure-button-error"><i class="icon-remove"></i></button>
+	</div>
+
+	<div ng-show="data.data[field.name].length > 0 && field.limit > 1">
+		<br>
+		<table class="pure-table pure-table-odd">
+			<thead>
+				<tr>
+					<th width="80%">File</th>
+					<th class="print-hide" width="20%" ng-show="field.limit > 1">Order</th>
+					<th class="print-hide">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="(index, file) in data.data[field.name]">
+					<td><a href="{{file.path}}" target="_blank">{{file.name}}</a></td>
+					<td class="print-hide" ng-show="field.limit > 1">
+							<button ng-click="sortUp(index, structure.user.access_token)" type="button" class="pure-button button-small" ng-class="{ invisible: index == 0 }"><i class="icon-long-arrow-up"></i></button>
+							<button ng-click="sortDown(index, structure.user.access_token)" type="button" class="pure-button button-small" ng-class="{ invisible: index >= (data.data[field.name].length - 1) }"><i class="icon-long-arrow-down"></i></button>
+						</td>
+					<td class="print-hide">
+						<button ng-click="deleteFile(index, structure.user.access_token)" type="button" class="pure-button pure-button-error"><i class="icon-remove"></i></button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>

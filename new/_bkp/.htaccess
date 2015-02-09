@@ -1,0 +1,12 @@
+#DirectoryIndex public/index.html
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond /home/againnewyork/againnewyork.com/-new/public/$1 -f
+RewriteRule (.*) public/$1 [L,NC]
+
+AddType application/x-font-woff woff
+AddType application/x-font-ttf ttf
+AddType application/vnd.ms-fontobject eot
+AddType image/svg+xml svg

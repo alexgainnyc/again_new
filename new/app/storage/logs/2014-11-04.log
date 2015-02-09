@@ -1,0 +1,5 @@
+2014-11-04 08:14:13 ERROR - Error::log - SQL error: SELECT * FROM `agn_assets` WHERE id in () ORDER BY FIELD(id, ) ;
+<br><b>'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY FIELD(id, )' at line 1'</b> in /home/againnewyork/againnewyork.com/-new/system/database/mysql/MysqlRecordSet.php on line 60
+2014-11-04 08:14:18 ERROR - Error::log - Invalid argument supplied for foreach() in /home/againnewyork/againnewyork.com/-new/system/manager/classes/formFields/ItemsField.php on line 204
+2014-11-04 08:14:19 ERROR - Error::log - Invalid argument supplied for foreach() in /home/againnewyork/againnewyork.com/-new/system/manager/classes/formFields/ItemsField.php on line 204
+2014-11-04 08:14:19 ERROR - Error::log - Invalid argument supplied for foreach() in /home/againnewyork/againnewyork.com/-new/system/manager/classes/formFields/ItemsField.php on line 204

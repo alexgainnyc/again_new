@@ -1,0 +1,396 @@
+body
+	color color-gray
+	background white
+	font-family sans-serif
+	font-weight 400
+	font-size 1em
+	line-height 1
+	text-rendering optimizeLegibility
+	-webkit-font-smoothing antialiased
+	font-family font-regular
+
+a
+	color color-main
+	text-decoration underline
+	transition all .7s cubic-bezier(0.190, 1.000, 0.220, 1.000) //ease-out-expo
+
+	.cantouch &:hover
+		color black
+
+::selection
+	background color-main /* Safari */
+	color white
+
+::-moz-selection
+	background color-main /* Firefox */
+	color white
+
+
+/**
+ * Scroll
+ */
+
+ ::-webkit-scrollbar
+	width 8px
+	height 8px
+
+
+::-webkit-scrollbar-track
+	border-radius 10px
+	background white
+
+
+::-webkit-scrollbar-thumb
+	border-radius 10px
+	background color-main
+
+h1, h2, h3, h4, h5, h6
+	font-family font-bold
+	letter-spacing 0.06em
+
+header
+	height 396px
+	clearfix()
+	phone height 310px
+
+	.clock
+		// background url("../img/tmp/clock.jpg") center center no-repeat
+		size 78px 140px
+		position absolute
+		margin 40px 0 0 36px
+		phone display none
+
+		canvas
+			color color-main
+			size 78px 78px
+
+		span
+			display block
+			text-align center
+			margin-top 13px
+			font-size 11px
+			font-family font-bold
+			color color-main
+
+	.title
+		text-align center
+
+		a
+			display inline-block
+
+			&:hover
+				opacity 0.5
+
+		a.no-link
+			&:hover
+				opacity 1
+
+		p
+			font-family font-title-italic
+			font-size 13px
+			margin-top 40px
+			line-height 122%
+			phone margin-top 20px
+
+			&.top
+				margin-top 96px
+				font-family font-regular
+				phone margin-top 50px
+
+		a.logo
+			margin 44px auto 0 auto
+			phone margin-top 30px
+			
+			h1
+				// font-family font-title
+				// color color-main
+				// font-size 90px
+				// letter-spacing -0.03em
+				
+				text-indent -9999px
+				overflow hidden
+				background url("../img/logo.png") center center no-repeat
+				display block
+				height 76px
+				background-size 210px 76px
+				width 210px
+
+			&.fixed
+				z-index 10000
+				position fixed
+				top 0
+				left 0
+				right 0
+				width 210px
+				margin 0 auto
+				display none
+
+				&.show
+					display inherit
+
+footer
+	.links
+		padding 54px 0px 216px 0px
+		text-align center
+		box-sizing border-box
+
+		a
+			font-size 26px
+			letter-spacing 0.09em
+			// text-decoration underline
+			// color color-main
+
+			// &:hover
+			// text-decoration none
+
+			&.arrow
+				box-sizing border-box
+				width 40%
+				height 40px
+				margin-right 6%
+				background-position 30px center
+				display inline-block
+				clearfix()
+				transition all .7s cubic-bezier(0.190, 1.000, 0.220, 1.000) //ease-out-expo
+				text-align right
+				text-decoration none
+
+				span
+					vertical-align middle
+					height 40px
+					text-decoration underline
+
+					&.icon
+						text-decoration none
+						display inline-block
+						background url("../img/arrow-left.jpg") center left no-repeat
+						padding-right 25px
+						size 116px 40px
+						transition all .7s cubic-bezier(0.190, 1.000, 0.220, 1.000) //ease-out-expo
+
+				&:hover
+
+					span.icon
+						padding-right 65px
+
+			&.next
+				margin-left 6%
+				margin-right 0%
+				text-align left
+
+				span.icon
+					background-image url("../img/arrow-right.jpg")
+					background-position center right
+					padding-left 25px
+					padding-right 0px
+
+				&:hover
+
+					span.icon
+						padding-right 0px
+						padding-left 65px
+			// 	background-image url("../img/arrow-right.jpg")
+			// 	background-position calc(100% - 30px) center
+			// 	padding-left 0px
+			// 	padding-right 190px
+			// 	margin 0
+
+			// 	&:hover
+			// 		background-position calc(100% - 0px) center
+
+	.logo
+		position absolute
+		right 80px
+		margin 0 0px 36px 0
+		display block
+		text-indent -9999px
+		size 56px 40px
+		background url("../img/logo-footer.png") top left no-repeat
+
+	.spacer
+		height 300px
+
+.site-wrapper
+	transition all .5s cubic-bezier(0.770, 0.000, 0.175, 1.000) //ease-inout-quart
+
+.menu-icon
+	position absolute
+	size 30px 36px
+	margin 40px 36px 0 0
+	right 0px
+	z-index 10000
+	phone width 15px
+	phone height 18px
+	phone margin 20px 26px 0 0
+
+	a
+		display block
+		size 30px 36px
+		padding-top 0px
+		phone width 25px
+		phone height 21px
+
+		span
+			display block
+			background color-main
+			height 4px
+			margin-bottom 8px
+			transition all .5s cubic-bezier(0.190, 1.000, 0.220, 1.000) //ease-out-expo
+			phone height 3px
+			phone margin-bottom 4px
+
+		.canhover &:hover
+			span
+				margin-bottom 4px
+
+			span:first-child
+				margin-top 4px
+
+.menu-wrapper
+	position absolute
+	width 0
+	height 730px
+	overflow hidden
+	right 0
+	top 0
+	// transform translate(0px, 0px)
+	z-index 0
+	transition all .5s cubic-bezier(0.770, 0.000, 0.175, 1.000) //ease-inout-quart
+
+	.menu-content
+		// position absolute
+		// top 0
+		// right 0
+		// height 100%
+		position relative
+		// transition all .7s cubic-bezier(0.190, 1.000, 0.220, 1.000) //ease-out-expo
+		// overflow hidden
+		padding-right 50px
+		text-align right
+		padding-top 160px
+		min-height 570px
+		width 270px
+		phone width 250px
+		phone padding-top 80px;
+		// transform translate(320px, 0px)
+		// width 10px
+
+		a, a:hover
+			text-decoration none
+
+		ul.sections
+			list-style none
+			margin-bottom 90px
+			phone margin-bottom 40px
+
+			li
+				display block
+				text-align right
+
+				a
+					font-size 70px
+					font-family font-thin
+					display block
+					text-align right
+					transition all .7s cubic-bezier(0.190, 1.000, 0.220, 1.000) //ease-out-expo
+					phone font-size 35px
+					phone line-height 38px
+
+					// &:after
+					// 	content " "
+					// 	position absolute
+					// 	background color-main
+					// 	width 1px
+					// 	height 60px
+					// 	margin-left 50px
+					// 	margin-top 8px
+					// 	transition all .3s cubic-bezier(0.190, 1.000, 0.220, 1.000) //ease-out-expo
+
+					.canhover &:hover
+						opacity 0.5
+						color color-main
+						// color black
+						// &:after
+						// 	width 5px
+						// 	margin-left 43px
+					
+					&.selected
+						text-decoration line-through
+						cursor default
+						opacity 0.5
+
+		.social
+			padding-bottom 80px
+			clearfix()
+			phone padding-bottom 30px
+
+			a
+				display block
+				float right
+				width 56px
+				height 56px
+				ir()
+				background url('../img/menu-social.png') left center no-repeat
+				background-size 224px 56px
+				transition all .3s cubic-bezier(0.190, 1.000, 0.220, 1.000) //ease-out-expo
+
+				&.facebook
+					background-position 0px 0px
+
+				&.tumblr
+					background-position -56px 0px
+
+				&.twitter
+					background-position -112px 0px
+
+				&.instagram
+					background-position -168px 0px
+
+				.canhover &:hover
+					opacity 0.4
+
+		.info
+			color color-main
+			line-height 120%
+			font-size 22px
+			phone font-size 15px
+
+			p
+				margin-bottom 26px
+				phone margin-bottom 16px
+
+			a
+				transition all .3s cubic-bezier(0.190, 1.000, 0.220, 1.000) //ease-out-expo
+
+				.canhover &:hover
+					opacity 0.4
+
+
+.menu-open
+	.menu-wrapper
+		// position relative
+		width 320px
+		phone width 250px
+
+		// .menu-content
+		// 	transform translate(0px, 0px)
+		// 	width 320px
+
+	.site-wrapper
+		position relative
+		opacity 0.5
+		transform translate(-320px, 0px)
+		phone transform translate(-250px, 0px)
+
+	.menu-icon
+		span:nth-child(2)
+			transform translate(0px, 11px) rotate(45deg)
+			phone transform translate(0px, 10px) rotate(45deg)
+
+		span:nth-child(3)
+			transform rotate(-45deg)
+			phone transform translate(0px, 4px) rotate(-45deg)
+
+		.canhover &:hover
+			span
+				margin-bottom 8px

@@ -1,0 +1,92 @@
+<style>
+
+.markdownHelp {
+    position: relative;
+    text-align: right;
+    height: 40px;
+    margin-bottom: -20px;
+    margin-top: 10px;
+    width: 80px;
+    left: 100%;
+    margin-left: -80px;
+}
+
+.markdownHelp-help {
+    cursor: pointer;
+    color: #666;
+}
+
+.markdownHelp-container {
+    font-size: 14px;
+    line-height: 100%;
+    padding: 10px 30px;
+    margin-top: 20px;
+    background: #eee;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    position: absolute;
+    right: -700px;
+    bottom: 0px;
+    text-align: left;
+    display: block;
+    width: 500px;
+    opacity: 0;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+    /*box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .4);*/
+}
+
+.markdownHelp:hover .markdownHelp-container {
+    opacity: 1;
+    right: 0;
+}
+
+.markdownHelp-title {
+    font-size: 30px;
+}
+
+.markdownHelp-subtitle {
+    font-size: 20px;
+}
+
+.markdownHelp-emphasis {
+    font-weight: bold;
+}
+
+.markdownHelp-italic {
+    font-style: italic;
+}
+
+.markdownHelp-list {
+    white-space: pre-line;
+    margin-top: -10px;
+    display: block;
+}
+
+
+</style>
+
+
+<label>{{field.label}}</label>
+<div epic class="markdown" id="epic-{{field.name}}" ng-model="data.data[field.name]"></div>
+
+
+<div class="markdownHelp clearfix">
+
+	<a class="markdownHelp-help"><i class="icon-question-sign"></i> Help</a>
+
+	<div class="markdownHelp-container">
+		<p class="markdownHelp-title">#main title</p>
+		<p class="markdownHelp-subtitle">##secundary title</p>
+		<p class="markdownHelp-text"><span class="markdownHelp-emphasis">**bold**</span> or <span class="markdownHelp-italic">*italic*</span></p>
+		<p class="markdownHelp-link">[link text](http://www.url.com)</p>
+		<p class="markdownHelp-image">![image alt text](http://www.url.com/to-image.jpg)</p>
+		<p class="markdownHelp-list">
+			- items
+			- items
+			- items
+		</p>
+</div>

@@ -1,0 +1,67 @@
+.modal-gallery
+	position fixed
+	top 0
+	right 0
+	bottom 0
+	left 0
+	background rgba(255, 255, 255, 0.5)
+	z-index 2000
+
+	.close
+		position absolute
+		right 20px
+		top 20px
+		width 40px
+		height 40px
+		background rgba(0, 0, 0, 0.1)
+		display block
+		marign 0
+		border 0
+		z-index 2100
+		transition all .3s cubic-bezier(0.190, 1.000, 0.220, 1.000) //ease-out-expo
+		text-align center
+		box-sizing border-box
+		cursor pointer
+
+		img
+			position absolute
+			top 50%
+			left 50%
+			margin-left -9px
+			margin-top -9px
+			display block
+
+		&:hover
+			width 80px
+			height 80px
+
+	.frame
+		box-sizing border-box
+		// overflow hidden
+		background color-silver
+		top 20px
+		right 20px
+		bottom 20px
+		left 20px
+		position absolute
+		z-index 2050
+
+		.bxslider
+			position:fixed;
+			width:100%;
+			height:100%;
+
+		.bx-wrapper
+			height 100%
+
+			.bx-viewport
+				height 100%
+
+				.slide
+					width 100%
+					height 100%
+					background color-silver center center no-repeat
+					background-size cover
+
+.modal-gallery-item
+	cursor pointer

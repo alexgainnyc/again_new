@@ -1,0 +1,101 @@
+section.cases
+	padding 0px 25px 0px 25px
+
+	.item
+		float left
+		width 50%
+		margin-bottom 150px
+		display block
+
+		.wrap
+			text-decoration none
+			display block
+			margin 0px 25px 0px 25px
+			cursor pointer
+			color color-gray
+			perspective 1100px
+			transform rotate3d(1,0,0,0deg)
+
+			.cover
+				background color-silver center center no-repeat
+				background-size cover
+				padding-top 85%
+				transition all .3s ease
+				transform rotate3d(1,0,0,0deg)
+				perspective 1100px
+
+			.cover:before
+				content " "
+				background black
+				height 0px
+				width 100%
+				display block
+				transform rotate3d(1,0,0,90deg)
+			// 	transform-origin 0px 0pxs
+
+			h2
+				font-size 14px
+				text-transform uppercase
+				display block
+				text-align center
+				margin 40px 0 0 0
+				transition all .3s ease
+				text-transform uppercase
+
+			span
+				font-size 26px
+				display block
+				text-align center
+				margin-top 12px
+				transition all .3s ease
+
+			&:hover
+
+				.cover
+					// opacity 0.8
+					// -webkit-filter unquote("brightness(3.1) contrast(1.1) saturate(0.6) sepia(0.4)")
+					transform rotate3d(1,0,0,7deg)
+
+				h2, span
+					color lighten(color-gray, 20%)
+
+		&.highlight
+			clear both
+			float none
+			width auto
+			margin 0px -25px 100px -25px
+
+			.wrap
+				margin 0px
+				color white
+			
+				.cover
+					padding-top 61%
+					margin 0
+
+				h2
+					position relative
+					margin-top -88px
+					font-size 15px
+
+				span
+					position relative
+					font-size 31px
+					margin-top 15px
+
+				&:hover
+					h2, span
+						color darken(white, 20%)
+
+	.quote
+		padding 150px 12% 190px 12%
+
+		p
+			font-size 40px
+			line-height 125%
+
+			&.author
+				color color-main
+				font-size 18px
+				margin-left 50%
+				margin-top 40px
